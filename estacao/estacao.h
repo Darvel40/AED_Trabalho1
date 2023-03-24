@@ -7,7 +7,6 @@ typedef struct _estacao{
   int codigo;
   char* nome;
   struct localidade;
-  int stockDeBrindes;
 } estacaoInfo, *estacao;
 
 //Inicializar Objeto

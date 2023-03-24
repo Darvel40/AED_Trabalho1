@@ -4,6 +4,7 @@
 //Struct Localidade
 typedef struct _localidade{
   char* nome;
+  int brindes;
 } localidadeInfo, *localidade;
 
 //Inicializar Objeto

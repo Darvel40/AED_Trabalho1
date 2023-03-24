@@ -5,10 +5,8 @@
 
 //Struct Localidade
 typedef struct _cartaopassageiro{
-  struct passageiro;
-  struct estacao;
   int pontos;
-  int brindes;
+  int codigoViagemRecente;
 } cartaopassageiroInfo, *cartaopassageiro;
 
 //Inicializar Objeto

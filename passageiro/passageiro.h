@@ -5,6 +5,7 @@
 typedef struct _passageiro{
   char* nome;
   char* email;
+  struct cartaopassageiro;
 } passageiroInfo, *passageiro;
 
 //Inicializar Objeto
