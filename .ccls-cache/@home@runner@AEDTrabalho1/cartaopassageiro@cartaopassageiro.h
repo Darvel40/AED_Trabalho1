@@ -1,5 +1,3 @@
-#include "../passageiro/passageiro.h"
-#include "../estacao/estacao.h"
 #ifndef H_CARTAOPASSAGEIRO
 #define H_CARTAOPASSAGEIRO
 
@@ -7,7 +5,7 @@
 typedef struct _cartaopassageiro{
   int pontos;
   int codigoViagemRecente;
-} cartaopassageiroInfo, *cartaopassageiro;
+} cartaopassageiro;
 
 //Inicializar Objeto
 cartaopassageiro create(cartaopassageiro e);

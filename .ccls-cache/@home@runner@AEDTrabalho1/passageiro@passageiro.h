@@ -5,13 +5,21 @@
 typedef struct _passageiro{
   char* nome;
   char* email;
-  struct cartaopassageiro;
-} passageiroInfo, *passageiro;
+  int pontos;
+  int codigoViagemRecente;
+} passageiro;
 
-//Inicializar Objeto
-passageiro create(passageiro p);
+typedef struct _listaPassageiro {
+  passageiro **passengers;
+  int size;
+  int capacity;
+} listaPassageiros;
 
-//Destroir Objeto
-void destroy(passageiro p);
+listaPassageiros *criaListaPassageiros(int capacity);
+void addPassageiro(listaPassageiros *list, passageiro *passenger);
+void destroiListaPassageiros(listaPassageiros *list);
+void showPassageiros(listaPassageiros *list);
+void registarViagem(listaPassageiros *list, char* email, int codigoViagemRecente, int pontos);
+void converterPontos(listaPassageiros *list, char* email, int codigo, int pontos);
 
 #endif

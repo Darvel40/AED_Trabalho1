@@ -1,4 +1,3 @@
-#include "../localidade/localidade.h"
 #ifndef H_ESTACAO
 #define H_ESTACAO
 
@@ -6,13 +5,22 @@
 typedef struct _estacao{
   int codigo;
   char* nome;
-  struct localidade;
-} estacaoInfo, *estacao;
+  char* localidade;
+  int stockDeBrindes;
+} estacao;
 
-//Inicializar Objeto
-estacao create(estacao e);
+typedef struct _listaEstacoes {
+  estacao **estacoes;
+  int size;
+  int capacity;
+} listaEstacoes;
 
-//Destroir Objeto
-void destroy(estacao e);
+// Prototipos
+listaEstacoes *criaListaEstacoes(int capacity);
+void addEstacao(listaEstacoes *list, estacao *estacao);
+void addBrindesEstacao(listaEstacoes *list, int codigo, int numeroBrindes);
+void destroiListaEstacoes(listaEstacoes *list);
+void showEstacao(listaEstacoes *list, int codigo);
+void topBrindes(listaEstacoes *list);
 
 #endif
