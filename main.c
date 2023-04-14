@@ -115,7 +115,7 @@ int main(void) {
       char* email;
       int codigo;
       int pontos;
-      int brindesDaEstacao;
+      int brindesDaEstacao = 0;
       int pontosDoPassageiro;
       int achouPassageiro = 0;
       int achouEstacao = 0;
@@ -125,7 +125,7 @@ int main(void) {
         scanf("%ms", &(email));
         for (int i = 0; i < listaPassageiros->size; i++) {
           if(!strcmp(listaPassageiros->passengers[i]->email, email)){
-            listaPassageiros->passengers[i]->pontos = pontosDoPassageiro;
+            pontosDoPassageiro = listaPassageiros->passengers[i]->pontos;
             achouPassageiro = 1;
             break;
           }
@@ -135,13 +135,16 @@ int main(void) {
       do{
         printf("Introduza o Codigo da Estação:");
         scanf("%d", &(codigo));
+
         for (int i = 0; i < listaEstacoes->size; i++) {
           if(listaEstacoes->estacoes[i]->codigo == codigo){
-            listaEstacoes->estacoes[i]->stockDeBrindes = brindesDaEstacao;
+            printf("Stock Brindes %d\n", listaEstacoes->estacoes[i]->stockDeBrindes);
+            brindesDaEstacao = listaEstacoes->estacoes[i]->stockDeBrindes;
             achouEstacao = 1;
             break;
           }
         }
+        //brindesDaEstacao = 20;
       } while(achouEstacao == 0);
       
       do{
