@@ -138,7 +138,7 @@ int main(void) {
 
         for (int i = 0; i < listaEstacoes->size; i++) {
           if(listaEstacoes->estacoes[i]->codigo == codigo){
-            printf("Stock Brindes %d\n", listaEstacoes->estacoes[i]->stockDeBrindes);
+            printf("Stock Brindes da Estação: %d\n", listaEstacoes->estacoes[i]->stockDeBrindes);
             brindesDaEstacao = listaEstacoes->estacoes[i]->stockDeBrindes;
             achouEstacao = 1;
             break;
@@ -150,6 +150,7 @@ int main(void) {
       do{
         printf("Introduza o numero de pontos que desejas converter:");
         scanf("%d", &(pontos));
+        if(pontos > brindesDaEstacao) printf("Quantidade indisponivel de brindes na estação!\n");
       } while(pontos > brindesDaEstacao);
 
       if(pontosDoPassageiro >= pontos){
